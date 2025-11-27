@@ -8,14 +8,14 @@ class TitleBar(QWidget):
 
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.setFixedHeight(30)
+        self.setFixedHeight(24)
         self.layout = QHBoxLayout(self)
-        self.layout.setContentsMargins(5, 0, 5, 0)
-        self.layout.setSpacing(5)
+        self.layout.setContentsMargins(4, 0, 4, 0)
+        self.layout.setSpacing(3)
 
         # Title
         self.title_label = QLabel("ACTimer")
-        self.title_label.setStyleSheet("color: white; font-weight: bold;")
+        self.title_label.setStyleSheet("color: white; font-weight: bold; font-size: 11px;")
         self.layout.addWidget(self.title_label)
         
         self.layout.addStretch()
@@ -23,7 +23,7 @@ class TitleBar(QWidget):
         # Pin Button
         self.pin_btn = QPushButton("📌")
         self.pin_btn.setCheckable(True)
-        self.pin_btn.setFixedSize(25, 25)
+        self.pin_btn.setFixedSize(20, 20)
         self.pin_btn.setStyleSheet("""
             QPushButton { background: transparent; color: #888; border: none; border-radius: 3px; }
             QPushButton:checked { color: white; background-color: #28a745; }
@@ -35,9 +35,9 @@ class TitleBar(QWidget):
 
         # Minimize Button
         self.min_btn = QPushButton("—")
-        self.min_btn.setFixedSize(25, 25)
+        self.min_btn.setFixedSize(20, 20)
         self.min_btn.setStyleSheet("""
-            QPushButton { background: transparent; color: #888; border: none; }
+            QPushButton { background: transparent; color: #888; border: none; font-size: 12px; }
             QPushButton:hover { color: white; background: #444; }
         """)
         self.min_btn.clicked.connect(self.minimize_clicked.emit)
@@ -45,7 +45,7 @@ class TitleBar(QWidget):
 
         # Close Button
         self.close_btn = QPushButton("✕")
-        self.close_btn.setFixedSize(25, 25)
+        self.close_btn.setFixedSize(20, 20)
         self.close_btn.setStyleSheet("""
             QPushButton { background: transparent; color: #888; border: none; }
             QPushButton:hover { color: white; background: #cc0000; }

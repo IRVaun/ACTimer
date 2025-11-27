@@ -15,7 +15,7 @@ class PinOverlay(QWidget):
         self.pin_btn = QPushButton("📌")
         self.pin_btn.setCheckable(True)
         self.pin_btn.setChecked(True) # Always checked in overlay mode
-        self.pin_btn.setFixedSize(25, 25)
+        self.pin_btn.setFixedSize(20, 20)
         # Same style as TitleBar pin button
         self.pin_btn.setStyleSheet("""
             QPushButton { background: transparent; color: #888; border: none; border-radius: 3px; }
@@ -26,7 +26,7 @@ class PinOverlay(QWidget):
         self.pin_btn.clicked.connect(self.on_click)
         self.layout.addWidget(self.pin_btn)
         
-        self.setFixedSize(25, 25)
+        self.setFixedSize(20, 20)
 
     def on_click(self):
         self.unpin_clicked.emit()
